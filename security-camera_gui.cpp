@@ -48,7 +48,7 @@ int main()
             struct tm *timeinfo = localtime(&converted_time);
             strftime (buffer,80,"%Y-%m-%d_%X", timeinfo);
             recordingStartTime = buffer;
-            std::replace( recordingStartTime.begin(), recordingStartTime.end(), ':', '-'); // replace all 'x' to 'y'
+            std::replace( recordingStartTime.begin(), recordingStartTime.end(), ':', '-'); // replace all ':' to '-'
             cv::VideoWriter temp("/media/pi/WD_Purple/" + recordingStartTime + ".avi", CV_FOURCC('M', 'J', 'P', 'G'), 7, cv::Size(frame_width, frame_height));
             writer = temp;
             temp.release();
